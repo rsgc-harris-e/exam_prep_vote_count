@@ -20,6 +20,8 @@ import Foundation
  
  */
 var inputToProcess : Int = 0
+var votesA = 0
+var votesB = 0
 
 // Loop until valid input is received
 while inputToProcess == 0 {
@@ -47,6 +49,7 @@ while inputToProcess == 0 {
     }
     
 }
+
 var inputstrproc : String = ""
 
 // Loop until valid input is received
@@ -67,11 +70,6 @@ while inputstrproc == "" {
             }
 
         }
-        // You probably need to add additional checks to be sure the
-        // input received is valid
-        // Add checks as needed...
-        
-        // Save the input given, as we are certain it's what we are looking for no
         
     }
     
@@ -81,31 +79,17 @@ if inputstrproc.characters.count != inputToProcess{
     print("Error")
 }
 
-
-/*
- 
- PROCESS
- 
- Here is where you implement the logic that solves the problem at hand.
- 
- Make use of your test plan and algorithm to ensure your code is complete.
- 
- */
-
-// Add 'process' code below....
-print("replace with process logic")
-
-
-/*
- 
- OUTPUT
- 
- Here is where you report the results of the 'process' section above.
- 
- Make use of your test plan and algorithm to ensure your code is complete.
- 
- */
-
-// Add 'output' code below... replace what is here as needed.
-print("The input given was: \(inputToProcess)")
-
+for letter in inputstrproc.characters{
+    if letter == "A"{
+        votesA+=1
+}else if letter == "B"{
+votesB+=1
+}
+}
+if votesA > votesB{
+    print("A")
+}else if votesB > votesA{
+    print("B")
+}else{
+    print("Tie")
+}
