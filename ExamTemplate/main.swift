@@ -19,13 +19,13 @@ import Foundation
  Make use of your test plan and algorithm to ensure your code is complete.
  
  */
-var inputToProcess : String = ""
+var inputToProcess : Int = 0
 
 // Loop until valid input is received
-while inputToProcess == "" {
+while inputToProcess == 0 {
     
     // Show the prompt
-    print("Ask the question here? ", terminator: "")
+    print("How many votes? ", terminator: "")
     
     // Get the user's input
     var input : String?
@@ -33,17 +33,54 @@ while inputToProcess == "" {
     
     // Use optional binding to see if the string can be unwrapped (to see if it is not nil)
     if let notNilInput = input {
-        
+        if let inputint = Int(notNilInput){
+            if inputint >= 1 && inputint <= 15{
+                    inputToProcess = inputint
+            }
+        }
         // You probably need to add additional checks to be sure the
         // input received is valid
         // Add checks as needed...
         
-        // Save the input given, as we are certain it's what we are looking for now
-        inputToProcess = notNilInput
+        // Save the input given, as we are certain it's what we are looking for no
         
     }
     
 }
+var inputstrproc : String = ""
+
+// Loop until valid input is received
+while inputstrproc == "" {
+    
+    // Show the prompt
+    print("", terminator: "")
+    
+    // Get the user's input
+    var input : String?
+    input = readLine()
+    
+    // Use optional binding to see if the string can be unwrapped (to see if it is not nil)
+    if let notNilInput = input {
+        if let inputstring = String(notNilInput){
+            if inputstring.contains("A"){
+                inputstrproc = inputstring
+            }
+
+        }
+        // You probably need to add additional checks to be sure the
+        // input received is valid
+        // Add checks as needed...
+        
+        // Save the input given, as we are certain it's what we are looking for no
+        
+    }
+    
+}
+
+if inputstrproc.characters.count != inputToProcess{
+    print("Error")
+}
+
 
 /*
  
